@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthenticationSample.BackEnd.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AuthenticationSample.BackEnd.Web
 {
@@ -24,6 +26,7 @@ namespace AuthenticationSample.BackEnd.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("sql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
