@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj": {}
+    "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj": {}
   },
   "projects": {
-    "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj": {
+    "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
+        "projectUniqueName": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
         "projectName": "AuthenticationSample.BackEnd.Web",
-        "projectPath": "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
-        "packagesPath": "C:\\Users\\sayed.talaat.ILG\\.nuget\\packages\\",
-        "outputPath": "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\obj\\",
+        "projectPath": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
+        "packagesPath": "C:\\Users\\hesham.salem\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sayed.talaat.ILG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hesham.salem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

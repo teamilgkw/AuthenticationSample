@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j884RmX/46PK0Ah0MEez1iqxVHlDePP2yOgJmyWHnz8zyGywV/YZghIzUxHPa5TKqZqyin6RBXUPWbc09fb5cQ==",
+  "dgSpecHash": "AiGCxXxGzK7TaX+VSRdOvFU+ml3rQEQFBzi2z/7Z7jariyZjwqqYIEUIeXt8AE5iXLE0PdGbNBjwoqfZHjsKVA==",
   "success": true,
-  "projectFilePath": "D:\\ILG_Prototypes\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
+  "projectFilePath": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
