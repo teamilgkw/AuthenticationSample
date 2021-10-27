@@ -1,62 +1,77 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
+using AuthenticationSample.BackEnd.Web.Data;
 using AuthenticationSample.BackEnd.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
 {
-    public class OwnerMasterRepository// : IOwnerMasterRepository
+    public class OwnerMasterRepository : IOwnerMasterRepository
     {
-    //    private ApplicationContext context;
-    //    private DbSet<OwnerMaster> OwnerMasterEntity;
-    //    public OwnerMasterRepository(ApplicationContext context)
-    //    {
-    //        this.context = context;
-    //        OwnerMasterEntity = context.Set<OwnerMaster>();
-    //    }
+        private AppDbContext _context;
+        private DbSet<OwnerMaster> OwnerMasterEntity;
+        public OwnerMasterRepository(AppDbContext context)
+        {
+            _context = context;
+            OwnerMasterEntity = context.Set<OwnerMaster>();
+        }
 
-    //    public Task Add(OwnerMaster entity)
-    //    {
-    //        context.Employees.Add(entity);
-    //    }
+        public async Task Insert(OwnerMaster entity)
+        {
+            await _context.OwnerMasters.AddAsync(entity);
+        }
 
-    //    public Task AddRange(IEnumerable<OwnerMaster> entities)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        public async Task<IEnumerable<OwnerMaster>> SelectAll()
+        {
+            return await _context.OwnerMasters.ToListAsync();
+        }
 
-    //    public Task<IEnumerable<OwnerMaster>> Find(Expression<Func<OwnerMaster, bool>> expression)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        public async Task<OwnerMaster> SelectById(string id)
+        {
+            return await _context.OwnerMasters.FirstOrDefaultAsync(ow => ow.Id == id);
+        }
 
-    //    public Task<IEnumerable<OwnerMaster>> GetAll()
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        public async Task DeleteById(string Id)
+        {
+            OwnerMaster ownerMaster = await _context.OwnerMasters.FindAsync(Id);
+            _context.OwnerMasters.Remove(ownerMaster);
+        }
 
-    //    public Task<OwnerMaster> GetById(string id)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
 
-    //    public Task Remove(OwnerMaster entity)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
 
-    //    public Task RemoveRange(IEnumerable<OwnerMaster> entities)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        public async Task SaveOwnerMaster(OwnerMaster entity)
+        {
+            await _context.SaveChangesAsync();
+        }
 
-    //    public Task SaveOwnerMaster(OwnerMaster entity)
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        public async Task UpdateById(string Id, OwnerMaster entity)
+        {
+            OwnerMasterEntity.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task<OwnerMaster> SelectByCriteriaAsync(OwnerMasterSearchViewModel OwnerMasterSearchViewModel)
+        {
+            IQueryable<OwnerLogin> oLoginTypeIQueryable = _context.OwnerLogins.AsQueryable();
+            if (OwnerMasterSearchViewModel != null)
+            {
+                if (!string.IsNullOrEmpty(OwnerMasterSearchViewModel.FullName))
+                {
+                    return _context.OwnerMasters.Where(dd => dd.FullName == OwnerMasterSearchViewModel.FullName).SingleOrDefault();
+                }
+                else
+                 if (!string.IsNullOrEmpty(OwnerMasterSearchViewModel.EmailOrMobile))
+                {
+                    oLoginTypeIQueryable = oLoginTypeIQueryable.Where(e => e.EmailOrMobile.Contains(OwnerMasterSearchViewModel.EmailOrMobile)).Include(ff => ff.OwnerMaster);
+                    return oLoginTypeIQueryable.FirstOrDefaultAsync().Result.OwnerMaster;
+                }
+            }
+            throw new Exception("Please Type your search");
+        }
     }
 }

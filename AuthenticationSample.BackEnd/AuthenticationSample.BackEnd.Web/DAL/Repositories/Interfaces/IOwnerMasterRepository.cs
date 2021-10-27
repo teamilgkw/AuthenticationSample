@@ -1,4 +1,5 @@
-﻿using AuthenticationSample.BackEnd.Web.Models;
+﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Services;
+using AuthenticationSample.BackEnd.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,12 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces
 {
     public interface IOwnerMasterRepository
     {
-        Task<OwnerMaster> GetById(string id);
-        Task<IEnumerable<OwnerMaster>> GetAll();
-        Task<IEnumerable<OwnerMaster>> Find(Expression<Func<OwnerMaster, bool>> expression);
-        Task Add(OwnerMaster entity);
-        Task AddRange(IEnumerable<OwnerMaster> entities);
-        Task Remove(OwnerMaster entity);
-        Task RemoveRange(IEnumerable<OwnerMaster> entities);
+        Task<OwnerMaster> SelectById(string id);
+        Task<IEnumerable<OwnerMaster>> SelectAll();
+        Task UpdateById(string Id, OwnerMaster entity);
+        Task Insert(OwnerMaster entity);
+        Task DeleteById(string Id);
         Task SaveOwnerMaster(OwnerMaster entity);
+        Task<OwnerMaster> SelectByCriteriaAsync(OwnerMasterSearchViewModel OwnerMasterSearchViewModel);
     }
 }
