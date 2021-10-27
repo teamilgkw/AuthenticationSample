@@ -75,7 +75,8 @@ namespace AuthenticationSample.BackEnd.Web.Services
 
         private bool IsEmailOrMobileNumberPasswordValid(string emailOrMobileNumber, string password)
         {
-            OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result.FirstOrDefault(ol => ol.EmailOrMobileNumber == password);
+            OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result.
+                FirstOrDefault(ol => ol.EmailOrMobileNumber == emailOrMobileNumber && ol.Password == password);
             if (ownerLogin == null)
             {
                 return false;
