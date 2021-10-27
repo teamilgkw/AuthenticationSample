@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
 using AuthenticationSample.BackEnd.Web.Entities;
+using AuthenticationSample.BackEnd.Web.Factories;
 using AuthenticationSample.BackEnd.Web.ViewModels;
 
 namespace AuthenticationSample.BackEnd.Web.Services
@@ -18,29 +19,13 @@ namespace AuthenticationSample.BackEnd.Web.Services
             _ownerMasterRepository = ownerMasterRepository;
             _ownerLoginRepository = ownerLoginRepository;
         }
-        public void Register(OwnerRegistrationVm ownerRegistrationVm)
+        public OwnerMaster Register(OwnerRegistrationVm ownerRegistrationVm)
         {
-            OwnerMaster ownerMaster = new OwnerMaster()
-            {
-                FullName = ownerRegistrationVm.FullName,
-                IsEnabled = true,
-            };
-            _ownerMasterRepository.Insert(ownerMaster);
+            OwnerFactory ownerFactory = new OwnerFactory(_ownerMasterRepository, _ownerLoginRepository);
+            OwnerMaster ownerMaster = ownerFactory.CreateOwner(ownerRegistrationVm);
+            
+            return ownerMaster;
 
-            OwnerLogin ownerLogin = new OwnerLogin()
-            {
-                Password = ownerRegistrationVm.Password,
-                EmailOrMobileNumber = ownerRegistrationVm.MobileNumber,
-                OwnerMaster = ownerMaster,
-                IsEnabled = true,
-                IsVerified = true,
-                LoginType = LoginType.MobileNumber
-            };
-            _ownerLoginRepository.Insert(ownerLogin);
-            
-            ownerMaster.OwnerLogins.Add(ownerLogin);
-            _ownerMasterRepository.Update(ownerMaster);
-            
         }
 
         public OwnerMaster Login(OwnerLoginVm ownerLoginVm)
