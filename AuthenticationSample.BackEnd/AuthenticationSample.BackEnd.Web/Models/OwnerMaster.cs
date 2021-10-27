@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AuthenticationSample.BackEnd.Web.Models
 {
+    [Table("OwnerMaster")]
     public class OwnerMaster
     {
         public string Id { get; set; }
