@@ -5798,24 +5798,26 @@
     ]
   },
   "packageFolders": {
-    "/home/kurdi/.nuget/packages/": {}
+    "C:\\Users\\hesham.salem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kurdi/RiderProjects/AuthenticationSample/AuthenticationSample.BackEnd/AuthenticationSample.BackEnd.Web/AuthenticationSample.BackEnd.Web.csproj",
+      "projectUniqueName": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
       "projectName": "AuthenticationSample.BackEnd.Web",
-      "projectPath": "/home/kurdi/RiderProjects/AuthenticationSample/AuthenticationSample.BackEnd/AuthenticationSample.BackEnd.Web/AuthenticationSample.BackEnd.Web.csproj",
-      "packagesPath": "/home/kurdi/.nuget/packages/",
-      "outputPath": "/home/kurdi/RiderProjects/AuthenticationSample/AuthenticationSample.BackEnd/AuthenticationSample.BackEnd.Web/obj/",
+      "projectPath": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\AuthenticationSample.BackEnd.Web.csproj",
+      "packagesPath": "C:\\Users\\hesham.salem\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\Bussiness\\AuthenticationSample\\AuthenticationSample.BackEnd\\AuthenticationSample.BackEnd.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/kurdi/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\hesham.salem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5873,7 +5875,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
