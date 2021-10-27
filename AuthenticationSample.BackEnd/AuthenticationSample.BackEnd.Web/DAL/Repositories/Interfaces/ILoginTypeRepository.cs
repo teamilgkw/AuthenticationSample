@@ -1,4 +1,5 @@
-﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories;
+﻿/*
+using AuthenticationSample.BackEnd.Web.DAL.Repositories;
 using AuthenticationSample.BackEnd.Web.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,3 +19,4 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces
         Task SaveLoginType(LoginType entity);
     }
 }
+*/

@@ -10,7 +10,6 @@ namespace AuthenticationSample.BackEnd.Web.Entities
     {
         [Key]
         public string ID { get; set; }
-
         public HashSet<OwnerLogin> OwnerLogins { get; set; } = new HashSet<OwnerLogin>();
         public string FullName { get; set; }
         public DateTime BirthDate { get; set; }

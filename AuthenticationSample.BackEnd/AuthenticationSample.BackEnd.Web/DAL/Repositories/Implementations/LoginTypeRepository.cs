@@ -1,4 +1,5 @@
-﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
+﻿/*
+using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
 using AuthenticationSample.BackEnd.Web.Data;
 using AuthenticationSample.BackEnd.Web.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -55,3 +56,4 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Implementations
         }
     }
 }
+*/

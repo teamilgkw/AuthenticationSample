@@ -12,7 +12,9 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            /*
             services.AddScoped<ILoginTypeRepository, LoginTypeRepository>();
+            */
             services.AddScoped<IOwnerLoginRepository, OwnerLoginRepository>();
             services.AddScoped<IOwnerMasterRepository, OwnerMasterRepository>();
             return services;

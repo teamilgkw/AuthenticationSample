@@ -11,7 +11,9 @@ namespace AuthenticationSample.BackEnd.Web.Data
         }
 
         public DbSet<OwnerMaster> OwnerMasters { get; set; }
+        /*
         public DbSet<LoginType> LoginTypes { get; set; }
+        */
         public DbSet<OwnerLogin> OwnerLogins  { get; set; }
     }
 }
