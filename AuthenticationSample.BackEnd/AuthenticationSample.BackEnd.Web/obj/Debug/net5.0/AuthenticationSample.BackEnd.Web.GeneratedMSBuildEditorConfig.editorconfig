@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = AuthenticationSample.BackEnd.Web
-build_property.ProjectDir = D:\Projects\Bussiness\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.Web\
+build_property.ProjectDir = /home/kurdi/RiderProjects/AuthenticationSample/AuthenticationSample.BackEnd/AuthenticationSample.BackEnd.Web/

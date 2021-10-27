@@ -1,4 +1,4 @@
-using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthenticationSample.BackEnd.Web.Data

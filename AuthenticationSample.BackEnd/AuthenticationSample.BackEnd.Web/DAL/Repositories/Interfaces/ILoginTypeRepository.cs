@@ -1,5 +1,5 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories;
-using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

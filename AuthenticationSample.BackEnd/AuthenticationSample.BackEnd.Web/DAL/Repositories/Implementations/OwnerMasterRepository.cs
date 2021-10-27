@@ -1,6 +1,6 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
 using AuthenticationSample.BackEnd.Web.Data;
-using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.Entities;
 using AuthenticationSample.BackEnd.Web.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -48,7 +48,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateById(OwnerMaster entity)
+        public async Task Update(OwnerMaster entity)
         {
             OwnerMasterEntity.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
@@ -68,7 +68,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Implementations
                 else
                  if (!string.IsNullOrEmpty(OwnerMasterSearchViewModel.EmailOrMobile))
                 {
-                    oLoginTypeIQueryable = oLoginTypeIQueryable.Where(e => e.EmailOrMobile.Contains(OwnerMasterSearchViewModel.EmailOrMobile)).Include(ff => ff.OwnerMaster);
+                    oLoginTypeIQueryable = oLoginTypeIQueryable.Where(e => e.EmailOrMobileNumber.Contains(OwnerMasterSearchViewModel.EmailOrMobile)).Include(ff => ff.OwnerMaster);
                     return  oLoginTypeIQueryable.FirstOrDefaultAsync().Result.OwnerMaster;
                 }
             }

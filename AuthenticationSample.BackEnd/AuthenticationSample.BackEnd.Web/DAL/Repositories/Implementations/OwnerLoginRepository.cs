@@ -1,6 +1,6 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
 using AuthenticationSample.BackEnd.Web.Data;
-using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

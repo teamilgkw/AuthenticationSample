@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AuthenticationSample.BackEnd.Web.Models
+namespace AuthenticationSample.BackEnd.Web.Entities
 {
     [Table("LoginType")]
     public class LoginType

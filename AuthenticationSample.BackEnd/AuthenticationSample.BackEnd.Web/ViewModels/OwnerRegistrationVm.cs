@@ -1,6 +1,6 @@
 namespace AuthenticationSample.BackEnd.Web.ViewModels
 {
-    public class OwnerRegistrationsVm
+    public class OwnerRegistrationVm
     {
         public string FullName { get; set; }
         public string MobileNumber { get; set; }  
