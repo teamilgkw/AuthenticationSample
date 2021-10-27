@@ -48,21 +48,20 @@ namespace AuthenticationSample.BackEnd.Web.Services
             return otp;
         }
 
-        /*public void ChangePassword(string ownerMasterId, string newPassword)
+        public void ChangePassword(string ownerMasterId, string newPassword)
         {
-            if (_ownerMasterRepository.SelectById(ownerMasterId).Result == null))
+            if (_ownerMasterRepository.SelectById(ownerMasterId).Result == null)
             {
                 throw new Exception("user not exists");
             }
             
-            List<OwnerLogin> ownerLogins = _ownerLoginRepository.SelectAll().Result
-                .Where(ol => ol.OwnerMaster.ID == ownerMasterId).ToList();
+            List<OwnerLogin> ownerLogins = _ownerLoginRepository.SelectAll().Result.Where(ol => ol.OwnerMaster.ID == ownerMasterId).ToList();
             
             foreach (OwnerLogin ownerLogin in ownerLogins)
             {
-                    
+                ownerLogin.Password = newPassword;
             }
-        }*/
+        }
 
         private bool IsEmailOrMobileNumberExists(string emailOrMobileNumber)
         {
