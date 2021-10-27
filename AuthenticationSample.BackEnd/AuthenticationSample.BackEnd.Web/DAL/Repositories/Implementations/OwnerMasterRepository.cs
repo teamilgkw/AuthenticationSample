@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuthenticationSample.BackEnd.Web.DAL.Repositories
+namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Implementations
 {
     public class OwnerMasterRepository : IOwnerMasterRepository
     {

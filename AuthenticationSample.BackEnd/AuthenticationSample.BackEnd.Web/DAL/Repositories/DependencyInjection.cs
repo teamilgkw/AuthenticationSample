@@ -1,5 +1,5 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
-using AuthenticationSample.BackEnd.Web.DAL.Repositories;
+using AuthenticationSample.BackEnd.Web.DAL.Repositories.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
