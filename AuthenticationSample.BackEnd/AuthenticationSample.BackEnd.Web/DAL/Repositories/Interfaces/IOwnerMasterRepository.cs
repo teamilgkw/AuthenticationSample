@@ -1,5 +1,6 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Services;
 using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces
     {
         Task<OwnerMaster> SelectById(string id);
         Task<IEnumerable<OwnerMaster>> SelectAll();
-        Task UpdateById(string Id, OwnerMaster entity);
+        Task UpdateById( OwnerMaster entity);
         Task Insert(OwnerMaster entity);
         Task DeleteById(string Id);
         Task SaveOwnerMaster(OwnerMaster entity);

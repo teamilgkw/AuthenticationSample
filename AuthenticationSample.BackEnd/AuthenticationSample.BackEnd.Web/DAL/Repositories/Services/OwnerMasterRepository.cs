@@ -1,6 +1,7 @@
 ﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Interfaces;
 using AuthenticationSample.BackEnd.Web.Data;
 using AuthenticationSample.BackEnd.Web.Models;
+using AuthenticationSample.BackEnd.Web.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
 
         public async Task<OwnerMaster> SelectById(string id)
         {
-            return await _context.OwnerMasters.FirstOrDefaultAsync(ow => ow.Id == id);
+            return await _context.OwnerMasters.FirstOrDefaultAsync(ow => ow.ID == id);
         }
 
         public async Task DeleteById(string Id)
@@ -47,7 +48,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateById(string Id, OwnerMaster entity)
+        public async Task UpdateById(OwnerMaster entity)
         {
             OwnerMasterEntity.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
@@ -68,7 +69,7 @@ namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
                  if (!string.IsNullOrEmpty(OwnerMasterSearchViewModel.EmailOrMobile))
                 {
                     oLoginTypeIQueryable = oLoginTypeIQueryable.Where(e => e.EmailOrMobile.Contains(OwnerMasterSearchViewModel.EmailOrMobile)).Include(ff => ff.OwnerMaster);
-                    return oLoginTypeIQueryable.FirstOrDefaultAsync().Result.OwnerMaster;
+                    return  oLoginTypeIQueryable.FirstOrDefaultAsync().Result.OwnerMaster;
                 }
             }
             throw new Exception("Please Type your search");

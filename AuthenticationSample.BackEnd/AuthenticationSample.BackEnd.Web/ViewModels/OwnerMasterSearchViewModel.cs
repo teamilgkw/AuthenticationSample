@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
+namespace AuthenticationSample.BackEnd.Web.ViewModels
 {
     public class OwnerMasterSearchViewModel
     {
