@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuthenticationSample.BackEnd.Web.DAL.Repositories.Services
+namespace AuthenticationSample.BackEnd.Web.DAL.Repositories
 {
     public class OwnerLoginRepository : IOwnerLoginRepository
     {

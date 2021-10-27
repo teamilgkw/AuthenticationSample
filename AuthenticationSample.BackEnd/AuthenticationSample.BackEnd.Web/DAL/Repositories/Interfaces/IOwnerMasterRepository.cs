@@ -1,4 +1,4 @@
-﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories.Services;
+﻿using AuthenticationSample.BackEnd.Web.DAL.Repositories;
 using AuthenticationSample.BackEnd.Web.Models;
 using AuthenticationSample.BackEnd.Web.ViewModels;
 using System;
