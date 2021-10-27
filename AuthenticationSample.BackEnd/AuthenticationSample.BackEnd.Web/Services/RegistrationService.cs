@@ -37,7 +37,32 @@ namespace AuthenticationSample.BackEnd.Web.Services
             return true;
         }
 
-   
+        public int OtpToRecoverPassword(string emailOrMobileNumber)
+        {
+            if (!IsEmailOrMobileNumberExists(emailOrMobileNumber))
+            {
+                throw new Exception("InValid Email Or Mobile Number");
+            }
+            Random random = new Random();
+            int otp  = random.Next(11111, 99999);
+            return otp;
+        }
+
+        /*public void ChangePassword(string ownerMasterId, string newPassword)
+        {
+            if (_ownerMasterRepository.SelectById(ownerMasterId).Result == null))
+            {
+                throw new Exception("user not exists");
+            }
+            
+            List<OwnerLogin> ownerLogins = _ownerLoginRepository.SelectAll().Result
+                .Where(ol => ol.OwnerMaster.ID == ownerMasterId).ToList();
+            
+            foreach (OwnerLogin ownerLogin in ownerLogins)
+            {
+                    
+            }
+        }*/
 
         private bool IsEmailOrMobileNumberExists(string emailOrMobileNumber)
         {
@@ -58,5 +83,7 @@ namespace AuthenticationSample.BackEnd.Web.Services
             }
             return true;
         }
+        
+        
     }
 }
