@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AuthenticationSample.BackEnd.Web.Models
 {
+    [Table("OwnerLogin")]
     public class OwnerLogin
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public OwnerMaster OwnerMaster { get; set; }
         public LoginType LoginType { get; set; }
         public string EmailOrMobile { get; set; }
