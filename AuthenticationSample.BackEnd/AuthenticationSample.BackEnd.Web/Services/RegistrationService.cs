@@ -28,14 +28,35 @@ namespace AuthenticationSample.BackEnd.Web.Services
 
         }
 
-        public OwnerMaster Login(OwnerLoginVm ownerLoginVm)
+        public bool Login(OwnerLoginVm ownerLoginVm)
         {
-            OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result.FirstOrDefault(ol => ol.EmailOrMobileNumber == ownerLoginVm.EmailOrMobileNumber);
-            if (ownerLogin == null)
+            if (!IsEmailOrMobileNumberPasswordValid(ownerLoginVm.EmailOrMobileNumber, ownerLoginVm.Password))
             {
                 throw new Exception("login failed");
             }
-            return ownerLogin.OwnerMaster;
+            return true;
+        }
+
+   
+
+        private bool IsEmailOrMobileNumberExists(string emailOrMobileNumber)
+        {
+            OwnerLogin ownerLogin =  _ownerLoginRepository.SelectAll().Result.FirstOrDefault(ol => ol.EmailOrMobileNumber == emailOrMobileNumber);
+            if (ownerLogin == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool IsEmailOrMobileNumberPasswordValid(string emailOrMobileNumber, string password)
+        {
+            OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result.FirstOrDefault(ol => ol.EmailOrMobileNumber == password);
+            if (ownerLogin == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
