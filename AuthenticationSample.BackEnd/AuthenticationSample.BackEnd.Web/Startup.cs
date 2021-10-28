@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using AuthenticationSample.BackEnd.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using AuthenticationSample.BackEnd.Web.DAL.Repositories;
+using AuthenticationSample.BackEnd.Web.Services;
 
 namespace AuthenticationSample.BackEnd.Web
 {
@@ -29,6 +30,7 @@ namespace AuthenticationSample.BackEnd.Web
             services.AddRazorPages();
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("sql")));
             services.AddRepositories();
+            services.AddBusinessServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

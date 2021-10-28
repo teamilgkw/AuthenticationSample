@@ -13,12 +13,16 @@ namespace AuthenticationSample.BackEnd.Web.Services
     {
         private readonly IOwnerMasterRepository _ownerMasterRepository;
         private readonly IOwnerLoginRepository _ownerLoginRepository;
+        private readonly OtpService _otpService;
 
-        public RegistrationService(IOwnerMasterRepository ownerMasterRepository, IOwnerLoginRepository ownerLoginRepository)
+        public RegistrationService(IOwnerMasterRepository ownerMasterRepository, IOwnerLoginRepository ownerLoginRepository, OtpService otpService)
         {
             _ownerMasterRepository = ownerMasterRepository;
             _ownerLoginRepository = ownerLoginRepository;
+            _otpService = otpService;
         }
+        
+        
         public OwnerMaster Register(OwnerRegistrationVm ownerRegistrationVm)
         {
             OwnerFactory ownerFactory = new OwnerFactory(_ownerMasterRepository, _ownerLoginRepository);
@@ -27,7 +31,6 @@ namespace AuthenticationSample.BackEnd.Web.Services
             return ownerMaster;
 
         }
-
         public bool Login(OwnerLoginVm ownerLoginVm)
         {
             if (!IsEmailOrMobileNumberPasswordValid(ownerLoginVm.EmailOrMobileNumber, ownerLoginVm.Password))
@@ -36,18 +39,27 @@ namespace AuthenticationSample.BackEnd.Web.Services
             }
             return true;
         }
-
-        public int OtpToRecoverPassword(string emailOrMobileNumber)
+        public int SendOtpToRecoverPassword(string emailOrMobileNumber)
         {
-            if (!IsEmailOrMobileNumberExists(emailOrMobileNumber))
+            if (IsEmailOrMobileNumberExists(emailOrMobileNumber))
             {
-                throw new Exception("InValid Email Or Mobile Number");
+                throw new Exception("not found");
             }
-            Random random = new Random();
-            int otp  = random.Next(11111, 99999);
+            OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result
+                .First(ol => ol.EmailOrMobileNumber == emailOrMobileNumber);
+
+            int otp = _otpService.OtpGenerator();
+            if (ownerLogin.LoginType == LoginType.Email)
+            {
+                _otpService.SendEmailOtp(emailOrMobileNumber, otp);
+            } 
+            if (ownerLogin.LoginType == LoginType.MobileNumber)
+            {
+                _otpService.SendEmailOtp(emailOrMobileNumber, otp);
+            }
+
             return otp;
         }
-
         public void ChangePassword(string ownerMasterId, string newPassword)
         {
             if (_ownerMasterRepository.SelectById(ownerMasterId).Result == null)
@@ -63,6 +75,8 @@ namespace AuthenticationSample.BackEnd.Web.Services
             }
         }
 
+        #region private utilities
+
         private bool IsEmailOrMobileNumberExists(string emailOrMobileNumber)
         {
             OwnerLogin ownerLogin =  _ownerLoginRepository.SelectAll().Result.FirstOrDefault(ol => ol.EmailOrMobileNumber == emailOrMobileNumber);
@@ -72,7 +86,6 @@ namespace AuthenticationSample.BackEnd.Web.Services
             }
             return true;
         }
-
         private bool IsEmailOrMobileNumberPasswordValid(string emailOrMobileNumber, string password)
         {
             OwnerLogin ownerLogin = _ownerLoginRepository.SelectAll().Result.
@@ -83,6 +96,9 @@ namespace AuthenticationSample.BackEnd.Web.Services
             }
             return true;
         }
+
+        #endregion
+
         
         
     }
