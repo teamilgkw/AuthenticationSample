@@ -1081,11 +1081,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-<<<<<<< HEAD
             "fileVersion": "2.0.0.0"
-=======
-            "fileVersion": "0.0.0.0"
->>>>>>> 90197de9e6c3a9bd16d857ca7e50e73ab9d65123
           }
         }
       },

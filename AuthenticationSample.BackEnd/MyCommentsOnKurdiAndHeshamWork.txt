@@ -1,0 +1,15 @@
+
+
+1 - they did not follow the project structure
+2 - they did not follow the project folder structure
+3 - did not follow the hungarian notation
+4 - Some Services does not have abstraction like email and 
+
+Install-Package Microsoft.EntityFrameworkCore.Design -Version 5.0.11
+
+    Install-Package  Microsoft.EntityFrameworkCore -Version 5.0.11
+    Install-Package  Microsoft.EntityFrameworkCore.Design -Version 5.0.11
+
+    Install-Package  Microsoft.EntityFrameworkCore.SqlServer -Version 5.0.11
+    Install-Package  Microsoft.EntityFrameworkCore.Tools -Version 5.0.11
+

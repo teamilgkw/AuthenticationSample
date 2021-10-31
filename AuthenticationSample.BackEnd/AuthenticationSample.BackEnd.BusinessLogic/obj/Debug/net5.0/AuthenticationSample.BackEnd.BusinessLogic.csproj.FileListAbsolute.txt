@@ -1,0 +1,12 @@
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\bin\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.deps.json
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\bin\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.dll
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\bin\Debug\net5.0\ref\AuthenticationSample.BackEnd.BusinessLogic.dll
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\bin\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.pdb
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.csproj.AssemblyReference.cache
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.AssemblyInfoInputs.cache
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.AssemblyInfo.cs
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.dll
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\ref\AuthenticationSample.BackEnd.BusinessLogic.dll
+D:\ILG_Prototypes\AuthenticationSample\AuthenticationSample.BackEnd\AuthenticationSample.BackEnd.BusinessLogic\obj\Debug\net5.0\AuthenticationSample.BackEnd.BusinessLogic.pdb

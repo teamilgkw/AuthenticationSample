@@ -4,13 +4,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AuthenticationSample.BackEnd.Web.Data;
 using Microsoft.EntityFrameworkCore;
-using AuthenticationSample.BackEnd.Web.DAL.Repositories;
+using AuthenticationSample.BackEnd.DataAccess;
 
 namespace AuthenticationSample.BackEnd.Web
 {
@@ -27,7 +22,7 @@ namespace AuthenticationSample.BackEnd.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("sql")));
+            services.AddDbContext<AuthenticationSampleContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AuthenticationSampleConnectionString")));
             services.AddRepositories();
         }
 

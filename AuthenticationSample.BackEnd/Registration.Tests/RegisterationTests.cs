@@ -78,12 +78,5 @@ namespace Resgistration.Tests
             //Assert
             result.Should().Be(expected);
         }
-
-
-
-
-
     }
-
-
 }
